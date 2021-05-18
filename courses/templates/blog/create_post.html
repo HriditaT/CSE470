@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center">
+        <h1>Create Post</h1>
+    </div>
+    <form method="post" action="blog/create/">
+        {% csrf_token %}
+        <label for="">Title*</label>
+        <input type="text" class="form-control" name="title" placeholder="Title of the post">
+        <label for="">Text*</label>
+        <textarea class="form-control" name="text" id="" cols="30" rows="10" placeholder="Content"></textarea>
+        <br>
+        <button class="site-btn">Create</button>
+    </form>
+
+</div>
+<br>
+{% endblock %}
